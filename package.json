@@ -1,0 +1,17 @@
+{
+  "name": "mcgill-menus",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.2.6",
+    "pdfjs-dist": "^2.16.105"
+  }
+}

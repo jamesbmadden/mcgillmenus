@@ -2,7 +2,7 @@
  * This is a series of functions that provide the infrastructure for loading the dining hall menus by making use of 
  * puppeteer to load the website, grab the text content of the PDF files, and output it.
  */
-import puppeteer, { HTTPRequest } from 'puppeteer';
+import puppeteer from 'puppeteer';
 import getTextFromPdf from './pdf';
 
 export default async function loadMenus () {

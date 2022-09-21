@@ -64,7 +64,7 @@ export async function loadMenuText (page: puppeteer.Page, res: string): Promise<
 }
 
 
-export function parseMenuText (text: string, res: string): string[] {
+export function parseMenuText (text: string, res: string): Menu[] {
 
   switch (res) {
     case 'nrh': return parseNrhMenuText(text);
@@ -78,7 +78,7 @@ export function parseMenuText (text: string, res: string): string[] {
  * Take the text loaded from the pdf, and parse it into a format understood by the templating
  * @param text 
  */
-export function parseNrhMenuText (text: string): string[] {
+export function parseNrhMenuText (text: string): Menu[] {
 
   // run for monday through friday
   const days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
@@ -88,7 +88,10 @@ export function parseNrhMenuText (text: string): string[] {
     // split to look just at this section
     const thisDayText = text.split(day)[1].split(days[i+ 1])[0];
 
-    return thisDayText;
+    // let's grab dinner
+    const dinners = thisDayText.split("DINNER")[1].split("SPECIALS")[0].split("L E G E N D")[0].split("forGRILL ITEMS SANDWICHES")[0];
+
+    return { dinners };
   });
   
   return menus;

@@ -15,6 +15,6 @@ export default async function getTextFromPdf (source: Buffer): Promise<string> {
   // finally, we can join all of the text together and return it. 
   // Because pageText is made up of TextContents, not actually just strings, we need to map stuff out
   // @ts-ignore
-  return pageText.map(({ items }) => items.map(({ str }) => str).join("")).join("");
+  return pageText.map(({ items }) => items.map(({ str }) => str).join("{{br}}")).join("\n");
 
 }

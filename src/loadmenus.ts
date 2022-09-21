@@ -92,9 +92,9 @@ export function parseNrhMenuText (text: string): Menu[] {
     const dinners = thisDayText.split("DINNER")[1]
       .split("SPECIALS")[0]
       .split("L E G E N D")[0]
-      .split("forGRILL ITEMS SANDWICHES")[0]
+      .split("Menu")[0]
       // finally, split into the individual items
-      .split(/(?<=[a-z])(?=[A-Z])/);
+      //.split(/(?<=[a-z])(?=[A-Z])/);
 
     return { dinners };
   });

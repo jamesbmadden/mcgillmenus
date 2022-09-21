@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import loadMenus from '../loadmenus';
+
+const pageText = await loadMenus();
 ---
 
 <Layout title="McGill Menus">
 	<main>
 		<h1>McGill Menus</h1>
 		<p>Eventually, data will be loaded to this page using an API powered by Netlify functions and Puppeteer. For now, though, enjoy this empty page.</p>
+		<p>Here's the text content of the new res menu, for testing purposes:</p>
+		<p>{ pageText }</p>
 	</main>
 </Layout>

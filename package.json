@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "astro": "^1.2.6",
-    "pdfjs-dist": "^2.16.105"
+    "pdfjs-dist": "^2.16.105",
+    "puppeteer": "^17.1.3"
   }
 }

@@ -1,10 +1,9 @@
-import { getDocument } from 'pdfjs-dist';
-import type { TextItem } from 'pdfjs-dist/types/src/display/api';
+import PDFJS from 'pdfjs-dist';
 
 export default async function getTextFromPdf (source: Buffer): Promise<string> {
 
   // load the pdf file from the source provided
-  const pdf = await getDocument(source).promise;
+  const pdf = await PDFJS.getDocument(source).promise;
 
   // all the pages have to be loaded and then their text grabbed
   // Basically, wait for all the promises loading the pages to be resolved.

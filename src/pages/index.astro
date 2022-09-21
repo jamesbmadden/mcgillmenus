@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import loadMenus from '../loadmenus';
 
-const pageText = await loadMenus();
+const pageText = JSON.stringify(await loadMenus());
 ---
 
 <Layout title="McGill Menus">
